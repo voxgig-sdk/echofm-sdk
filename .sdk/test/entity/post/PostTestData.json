@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "post": {
+      "POST00": {
+        "post_id": "POST01",
+        "view": "s15",
+        "id": "POST00"
+      },
+      "POST01": {
+        "post_id": "POST01",
+        "view": "s29",
+        "id": "POST01"
+      },
+      "POST02": {
+        "post_id": "POST01",
+        "view": "s3d",
+        "id": "POST02"
+      }
+    }
+  },
+  "new": {
+    "post": {
+      "post_ref01": {
+        "post_id": "POST01",
+        "view": "s51"
+      }
+    }
+  }
+}

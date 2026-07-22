@@ -1,0 +1,69 @@
+# Entity: post
+
+main: kit: entity: post: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "post_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "view"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "post"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: 469191
+                kind: "param"
+                name: "post_id"
+                orig: "post_id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api/views/{post_id}"
+          parts: [
+            "api"
+            "views"
+            "{post_id}"
+          ]
+          select: {
+            exist: [
+              "post_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "view"
+      ]
+    ]
+  }
+
+
+
+}

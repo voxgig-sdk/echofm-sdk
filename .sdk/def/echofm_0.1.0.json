@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Echofm API",
+    "description": "The Echofm API allows users to interact with the echofm.online platform, providing access to favorite hosts and programs. It facilitates data retrieval such as view counts for specific posts, enabling integration with applications and services.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/echofm"
+    }
+  },
+  "externalDocs": {
+    "description": "API Documentation",
+    "url": "https://github.com/l0v3m0n3y/echofm"
+  },
+  "servers": [
+    {
+      "url": "https://echofm.online",
+      "description": "Echofm Production Server"
+    }
+  ],
+  "paths": {
+    "/api/views/{post_id}": {
+      "get": {
+        "summary": "Get Views for Post",
+        "description": "Retrieves the view count for a specific post by its ID",
+        "operationId": "getViews",
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the post",
+            "schema": {
+              "type": "integer",
+              "example": 469191
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved view count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "views": {
+                      "type": "integer",
+                      "description": "Number of views for the post",
+                      "example": 1234
+                    },
+                    "post_id": {
+                      "type": "integer",
+                      "description": "The post identifier",
+                      "example": 469191
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Post not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Post not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ViewsResponse": {
+        "type": "object",
+        "properties": {
+          "views": {
+            "type": "integer",
+            "description": "Number of views for the post"
+          },
+          "post_id": {
+            "type": "integer",
+            "description": "The post identifier"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Posts",
+      "description": "Operations related to posts and their view counts"
+    }
+  ]
+}
