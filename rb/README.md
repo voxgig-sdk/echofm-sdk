@@ -36,7 +36,7 @@ Post is nested under post, so provide the `post_id`.
 
 ```ruby
 begin
-  # load returns the bare Post record (raises on error).
+  # load returns the ENTITY — call data_get for the Post record (raises on error).
   post = client.Post.load({ "post_id" => 1 })
   puts post
 rescue => err
@@ -51,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  post = client.Post.load()
+  post = client.Post.load({ "post_id" => 1 })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -119,8 +119,9 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = EchofmSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-post = client.Post.load()
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+post = client.Post.load({ "post_id" => 1 })
 puts post
 ```
 
@@ -237,7 +238,7 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `post_id` |  |
-| `view` |  |
+| `views` |  |
 
 Operations: Load.
 
@@ -263,12 +264,12 @@ Create an instance: `post = client.Post`
 | Field | Type | Description |
 | --- | --- | --- |
 | `post_id` | `Integer` |  |
-| `view` | `Integer` |  |
+| `views` | `Integer` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Post record (raises on error).
+# load returns the ENTITY — call data_get for the Post record (raises on error).
 post = client.Post.load({ "post_id" => 1 })
 ```
 
@@ -350,7 +351,7 @@ stores the returned data and match criteria internally.
 
 ```ruby
 post = client.Post
-post.load()
+post.load({ "post_id" => 1 })
 
 # post.data_get now returns the post data from the last load
 # post.match_get returns the last match criteria

@@ -16,7 +16,7 @@ declare(strict_types=1);
 class Post
 {
     public ?int $post_id = null;
-    public ?int $view = null;
+    public ?int $views = null;
 }
 
 /** Request payload for Post#load. */

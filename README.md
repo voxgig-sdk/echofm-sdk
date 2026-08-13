@@ -23,7 +23,7 @@ support (`load`):
 
 ```ts
 const client = new EchofmSDK()
-const post = await client.Post().load()
+const post = await client.Post().load({ post_id: 1 })
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = EchofmSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = EchofmSDK.test({
+  entity: {
+    post: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const post = await client.Post().load({ post_id: 1 })
-// post is a bare Post populated with mock data
+// post is the Post entity, populated with mock data
+// — call post.data() for the record itself
 console.log(post)
 ```
 
@@ -185,7 +194,7 @@ require_once 'echofm_sdk.php';
 $client = new EchofmSDK();
 
 
-// Load a specific post (returns the bare record; throws on error)
+// Load a specific post (returns the ENTITY; call data_get() for the record; throws on error)
 $post = $client->Post()->load(["post_id" => 1]);
 print_r($post);
 ```
@@ -216,7 +225,7 @@ require_relative "Echofm_sdk"
 client = EchofmSDK.new
 
 
-# Load a specific post (returns the bare record; raises on error)
+# Load a specific post (returns the ENTITY; call data_get for the record)
 post = client.Post.load({ "post_id" => 1 })
 puts post
 ```
@@ -350,6 +359,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/l0v3m0n3y/echofm](https://github.com/l0v3m0n3y/echofm)
 

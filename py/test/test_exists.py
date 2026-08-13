@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Echofm SDK exists test
 
 import pytest
 from echofm_sdk import EchofmSDK

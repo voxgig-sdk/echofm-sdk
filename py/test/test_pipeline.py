@@ -16,11 +16,11 @@
 import pytest
 
 from echofm_sdk import EchofmSDK
-from core.error import EchofmError
-from core.result import EchofmResult
-from core.response import EchofmResponse
-from core.spec import EchofmSpec
-from feature.base_feature import EchofmBaseFeature
+from echofm_sdk.core.error import EchofmError
+from echofm_sdk.core.result import EchofmResult
+from echofm_sdk.core.response import EchofmResponse
+from echofm_sdk.core.spec import EchofmSpec
+from echofm_sdk.feature.base_feature import EchofmBaseFeature
 
 
 def _client():

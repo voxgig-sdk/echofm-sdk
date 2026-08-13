@@ -56,7 +56,7 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const post = await client.Post().load()
+  const post = await client.Post().load({ post_id: 1 })
   console.log(post)
 } catch (err) {
   console.error('load failed:', err)
@@ -123,8 +123,9 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = EchofmSDK.test()
 
-const post = await client.Post().load()
-// post is a bare entity populated with mock response data
+const post = await client.Post().load({ post_id: 1 })
+// post is the entity, populated with mock response data
+// — call post.data() for the record itself
 console.log(post)
 ```
 
@@ -143,7 +144,7 @@ Entity instances remember their last match and data:
 const entity = client.Post()
 
 // First call runs the operation and stores its result
-await entity.load()
+await entity.load({ post_id: 1 })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
@@ -288,7 +289,7 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `post_id` |  |
-| `view` |  |
+| `views` |  |
 
 Operations: load.
 
@@ -314,7 +315,7 @@ Create an instance: `const post = client.Post()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `post_id` | `number` |  |
-| `view` | `number` |  |
+| `views` | `number` |  |
 
 #### Example: Load
 
@@ -393,7 +394,7 @@ calls on the same instance can rely on this state.
 
 ```ts
 const post = client.Post()
-await post.load()
+await post.load({ post_id: 1 })
 
 // post.data() now returns the post data from the last `load`
 // post.match() returns the last match criteria

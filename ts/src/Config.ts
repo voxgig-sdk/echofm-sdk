@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Echofm',
   }
 
 
@@ -63,7 +63,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "view",
+          "name": "views",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
@@ -91,6 +91,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/views/{post_id}",
               "parts": [

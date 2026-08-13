@@ -8,7 +8,7 @@
 
 ---@class Post
 ---@field post_id? number
----@field view? number
+---@field views? number
 
 ---@class PostLoadMatch
 ---@field post_id number

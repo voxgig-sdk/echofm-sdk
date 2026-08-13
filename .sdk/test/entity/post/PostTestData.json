@@ -3,17 +3,17 @@
     "post": {
       "POST00": {
         "post_id": "POST01",
-        "view": "s15",
+        "views": "s15",
         "id": "POST00"
       },
       "POST01": {
         "post_id": "POST01",
-        "view": "s29",
+        "views": "s29",
         "id": "POST01"
       },
       "POST02": {
         "post_id": "POST01",
-        "view": "s3d",
+        "views": "s3d",
         "id": "POST02"
       }
     }
@@ -22,7 +22,7 @@
     "post": {
       "post_ref01": {
         "post_id": "POST01",
-        "view": "s51"
+        "views": "s51"
       }
     }
   }

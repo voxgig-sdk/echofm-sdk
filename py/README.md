@@ -39,7 +39,7 @@ client = EchofmSDK()
 ### 3. Load a post
 
 Post is nested under post, so provide the `post_id`.
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -56,7 +56,7 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    post = client.Post().load()
+    post = client.Post().load({"post_id": 1})
     print(post)
 except Exception as err:
     print(f"load failed: {err}")
@@ -123,8 +123,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = EchofmSDK.test()
 
-# Entity ops return the bare record and raise on error.
-post = client.Post().load()
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+post = client.Post().load({"post_id": 1})
 # post contains the mock response record
 ```
 
@@ -219,7 +220,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -242,7 +243,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `post_id` |  |
-| `view` |  |
+| `views` |  |
 
 Operations: Load.
 
@@ -268,7 +269,7 @@ Create an instance: `post = client.Post()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `post_id` | `int` |  |
-| `view` | `int` |  |
+| `views` | `int` |  |
 
 #### Example: Load
 
@@ -353,7 +354,7 @@ stores the returned data and match criteria internally.
 
 ```python
 post = client.Post()
-post.load()
+post.load({"post_id": 1})
 
 # post.data_get() now returns the post data from the last load
 # post.match_get() returns the last match criteria

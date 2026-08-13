@@ -99,7 +99,7 @@ fmt.Println(post.GetName()) // "post"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `post_id` | `int` | No |  |
-| `view` | `int` | No |  |
+| `views` | `int` | No |  |
 
 ### Operations
 

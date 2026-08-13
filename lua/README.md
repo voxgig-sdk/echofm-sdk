@@ -50,7 +50,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local post, err = client:Post():load()
+local post, err = client:Post():load({ post_id = 1 })
 if err then error(err) end
 ```
 
@@ -108,7 +108,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Post():load()
+local result, err = client:Post():load({ post_id = 1 })
 -- result is the returned data; err is set on failure
 ```
 
@@ -228,7 +228,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `post_id` |  |
-| `view` |  |
+| `views` |  |
 
 Operations: Load.
 
@@ -254,7 +254,7 @@ Create an instance: `local post = client:Post(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `post_id` | `number` |  |
-| `view` | `number` |  |
+| `views` | `number` |  |
 
 #### Example: Load
 
@@ -340,7 +340,7 @@ stores the returned data and match criteria internally.
 
 ```lua
 local post = client:Post()
-post:load()
+post:load({ post_id = 1 })
 
 -- post:data_get() now returns the post data from the last load
 -- post:match_get() returns the last match criteria

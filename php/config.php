@@ -39,7 +39,7 @@ class EchofmConfig
             ],
             [
               'active' => true,
-              'name' => 'view',
+              'name' => 'views',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 1,
@@ -67,6 +67,7 @@ class EchofmConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/views/{post_id}',
                   'parts' => [

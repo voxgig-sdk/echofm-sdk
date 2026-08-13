@@ -7,7 +7,7 @@
 
 export interface Post {
   post_id?: number
-  view?: number
+  views?: number
 }
 
 export interface PostLoadMatch {

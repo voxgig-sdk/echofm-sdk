@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import EchofmControl
-from core.error import EchofmError
-from core.result import EchofmResult
-from core.spec import EchofmSpec
+from echofm_sdk.config import make_config
+from echofm_sdk.features import _make_feature
+from echofm_sdk.core.control import EchofmControl
+from echofm_sdk.core.error import EchofmError
+from echofm_sdk.core.result import EchofmResult
+from echofm_sdk.core.spec import EchofmSpec
 
 
 # True when this SDK was generated with the named feature.

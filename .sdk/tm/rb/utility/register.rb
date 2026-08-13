@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ EchofmUtility.registrar = ->(u) {
   u.prepare_params = EchofmUtilities::PrepareParams
   u.prepare_path = EchofmUtilities::PreparePath
   u.prepare_query = EchofmUtilities::PrepareQuery
+  u.graphql_body = EchofmUtilities::GraphqlBody
+  u.graphql_errors = EchofmUtilities::GraphqlErrors
   u.result_basic = EchofmUtilities::ResultBasic
   u.result_body = EchofmUtilities::ResultBody
   u.result_headers = EchofmUtilities::ResultHeaders

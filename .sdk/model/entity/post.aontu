@@ -11,7 +11,7 @@ main: kit: entity: post: {
       type: "`$INTEGER`"
     }
     {
-      name: "view"
+      name: "views"
       req: false
       type: "`$INTEGER`"
     }

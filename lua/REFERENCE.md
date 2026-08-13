@@ -91,7 +91,7 @@ local post = client:Post(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `post_id` | `number` | No |  |
-| `view` | `number` | No |  |
+| `views` | `number` | No |  |
 
 ### Operations
 

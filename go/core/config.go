@@ -33,7 +33,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "view",
+						"name": "views",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 1,
@@ -61,6 +61,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/views/{post_id}",
 								"parts": []any{
@@ -80,7 +81,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

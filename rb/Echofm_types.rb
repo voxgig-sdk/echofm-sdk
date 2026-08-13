@@ -13,11 +13,11 @@
 # @!attribute [rw] post_id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] view
+# @!attribute [rw] views
 #   @return [Integer, nil]
 Post = Struct.new(
   :post_id,
-  :view,
+  :views,
   keyword_init: true
 )
 

@@ -37,7 +37,7 @@ Post is nested under post, so provide the `post_id`.
 
 ```php
 try {
-    // load() returns the bare Post record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Post record (throws on error).
     $post = $client->Post()->load(["post_id" => 1]);
     print_r($post);
 } catch (\Throwable $err) {
@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $post = $client->Post()->load();
+    $post = $client->Post()->load(["post_id" => 1]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,8 +125,9 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = EchofmSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$post = $client->Post()->load();
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$post = $client->Post()->load(["post_id" => 1]);
 print_r($post);
 ```
 
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -247,7 +248,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `post_id` |  |
-| `view` |  |
+| `views` |  |
 
 Operations: Load.
 
@@ -273,12 +274,12 @@ Create an instance: `$post = $client->Post();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `post_id` | `int` |  |
-| `view` | `int` |  |
+| `views` | `int` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Post record (throws on error).
+// load() returns the ENTITY — call data_get() for the Post record (throws on error).
 $post = $client->Post()->load(["post_id" => 1]);
 ```
 
@@ -360,7 +361,7 @@ stores the returned data and match criteria internally.
 
 ```php
 $post = $client->Post();
-$post->load();
+$post->load(["post_id" => 1]);
 
 // $post->data_get() now returns the post data from the last load
 // $post->match_get() returns the last match criteria

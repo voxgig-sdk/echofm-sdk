@@ -94,7 +94,7 @@ post = client.Post
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `post_id` | `Integer` | No |  |
-| `view` | `Integer` | No |  |
+| `views` | `Integer` | No |  |
 
 ### Operations
 

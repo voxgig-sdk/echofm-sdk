@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from echofm_sdk.utility.voxgig_struct import voxgig_struct as vs
 from echofm_sdk import EchofmSDK
-from core import helpers
+from echofm_sdk.core import helpers
 from test import runner
 
 

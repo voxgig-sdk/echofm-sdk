@@ -66,7 +66,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-post, err := client.Post(nil).Load(nil, nil)
+post, err := client.Post(nil).Load(map[string]any{"post_id": 1}, nil)
 if err != nil {
     // handle err
     return
@@ -136,7 +136,7 @@ Create a mock client for unit testing — no server required:
 client := sdk.Test()
 
 post, err := client.Post(nil).Load(
-    nil, nil,
+    map[string]any{"post_id": 1}, nil,
 )
 if err != nil {
     panic(err)
@@ -259,7 +259,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"post_id"` |  |
-| `"view"` |  |
+| `"views"` |  |
 
 Operations: Load.
 
@@ -285,7 +285,7 @@ Create an instance: `post := client.Post(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `post_id` | `int` |  |
-| `view` | `int` |  |
+| `views` | `int` |  |
 
 #### Example: Load
 
@@ -372,7 +372,7 @@ stores the returned data and match criteria internally.
 
 ```go
 post := client.Post(nil)
-post.Load(nil, nil)
+post.Load(map[string]any{"post_id": 1}, nil)
 
 // post.Data() now returns the post data from the last load
 // post.Match() returns the last match criteria
