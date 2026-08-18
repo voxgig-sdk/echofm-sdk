@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://echofm.online',
+    base: "https://echofm.online",
 
     headers: {
       "content-type": "application/json"
@@ -55,18 +55,12 @@ class Config {
     "post": {
       "fields": [
         {
-          "active": true,
           "name": "post_id",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 0
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "views",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         }
       ],
       "name": "post",
@@ -76,18 +70,15 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "example": 469191,
                     "kind": "param",
                     "name": "post_id",
                     "orig": "post_id",
                     "reqd": true,
-                    "type": "`$INTEGER`",
-                    "index$": 0
+                    "type": "`$INTEGER`"
                   }
                 ]
               },
@@ -107,11 +98,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

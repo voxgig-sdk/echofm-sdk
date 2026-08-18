@@ -40,7 +40,7 @@ class EchofmSDK
         $utility = new EchofmUtility();
         $this->_utility = $utility;
 
-        $config = EchofmConfig::make_config();
+        $config = EchofmConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

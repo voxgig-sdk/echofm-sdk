@@ -28,7 +28,7 @@ class EchofmSDK
     utility = EchofmUtility.new
     @_utility = utility
 
-    config = EchofmConfig.make_config
+    config = EchofmConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

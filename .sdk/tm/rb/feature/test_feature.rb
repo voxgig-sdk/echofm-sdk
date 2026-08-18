@@ -1,9 +1,9 @@
-# ProjectName SDK test feature
+# Echofm SDK test feature
 
 require_relative '../utility/struct/voxgig_struct'
 require_relative 'base_feature'
 
-class ProjectNameTestFeature < ProjectNameBaseFeature
+class EchofmTestFeature < EchofmBaseFeature
   # The `body.<key>` form of an op's response transform: the mock wraps its
   # payload in <key> so the transform can unwrap it again.
   ENVELOPE_RES_RE = /\A`body\.([^`.]+)`\z/
