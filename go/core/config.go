@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Echofm",
+			"slug": "echofm",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,10 +36,12 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "post_id",
+						"short": "The post identifier",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "views",
+						"short": "Number of views for the post",
 						"type": "`$INTEGER`",
 					},
 				},

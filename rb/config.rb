@@ -19,6 +19,9 @@ module EchofmConfig
     {
       "main" => {
         "name" => "Echofm",
+        "slug" => "echofm",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,10 +44,12 @@ module EchofmConfig
           "fields" => [
             {
               "name" => "post_id",
+              "short" => "The post identifier",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "views",
+              "short" => "Number of views for the post",
               "type" => "`$INTEGER`",
             },
           ],

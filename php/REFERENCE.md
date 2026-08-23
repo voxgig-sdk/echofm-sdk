@@ -92,8 +92,8 @@ $post = $client->Post();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `post_id` | `int` | No |  |
-| `views` | `int` | No |  |
+| `post_id` | `int` | No | The post identifier |
+| `views` | `int` | No | Number of views for the post |
 
 ### Operations
 

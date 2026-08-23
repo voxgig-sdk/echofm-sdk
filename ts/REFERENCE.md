@@ -116,8 +116,8 @@ const post = client.Post()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `post_id` | `number` | No |  |
-| `views` | `number` | No |  |
+| `post_id` | `number` | No | The post identifier |
+| `views` | `number` | No | Number of views for the post |
 
 ### Operations
 

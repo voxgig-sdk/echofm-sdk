@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -288,8 +288,8 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `post_id` |  |
-| `views` |  |
+| `post_id` | The post identifier |
+| `views` | Number of views for the post |
 
 Operations: load.
 
@@ -314,8 +314,8 @@ Create an instance: `const post = client.Post()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `post_id` | `number` |  |
-| `views` | `number` |  |
+| `post_id` | `number` | The post identifier |
+| `views` | `number` | Number of views for the post |
 
 #### Example: Load
 

@@ -227,8 +227,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `post_id` |  |
-| `views` |  |
+| `post_id` | The post identifier |
+| `views` | Number of views for the post |
 
 Operations: Load.
 
@@ -253,8 +253,8 @@ Create an instance: `local post = client:Post(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `post_id` | `number` |  |
-| `views` | `number` |  |
+| `post_id` | `number` | The post identifier |
+| `views` | `number` | Number of views for the post |
 
 #### Example: Load
 

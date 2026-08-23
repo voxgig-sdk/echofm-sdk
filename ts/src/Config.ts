@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Echofm',
+        slug: "echofm",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,10 +67,12 @@ class Config {
       "fields": [
         {
           "name": "post_id",
+          "short": "The post identifier",
           "type": "`$INTEGER`"
         },
         {
           "name": "views",
+          "short": "Number of views for the post",
           "type": "`$INTEGER`"
         }
       ],

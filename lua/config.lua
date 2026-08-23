@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Echofm",
+      slug = "echofm",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,10 +32,12 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "post_id",
+            ["short"] = "The post identifier",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "views",
+            ["short"] = "Number of views for the post",
             ["type"] = "`$INTEGER`",
           },
         },

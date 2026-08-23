@@ -8,11 +8,13 @@ main: kit: entity: post: {
     {
       name: "post_id"
       req: false
+      short: "The post identifier"
       type: "`$INTEGER`"
     }
     {
       name: "views"
       req: false
+      short: "Number of views for the post"
       type: "`$INTEGER`"
     }
   ]

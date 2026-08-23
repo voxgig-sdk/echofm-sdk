@@ -247,8 +247,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `post_id` |  |
-| `views` |  |
+| `post_id` | The post identifier |
+| `views` | Number of views for the post |
 
 Operations: Load.
 
@@ -273,8 +273,8 @@ Create an instance: `$post = $client->Post();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `post_id` | `int` |  |
-| `views` | `int` |  |
+| `post_id` | `int` | The post identifier |
+| `views` | `int` | Number of views for the post |
 
 #### Example: Load
 

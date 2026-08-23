@@ -6,7 +6,7 @@ The Golang SDK for the Echofm API — an entity-oriented client using standard G
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Post(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,8 +258,8 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"post_id"` |  |
-| `"views"` |  |
+| `"post_id"` | The post identifier |
+| `"views"` | Number of views for the post |
 
 Operations: Load.
 
@@ -284,8 +284,8 @@ Create an instance: `post := client.Post(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `post_id` | `int` |  |
-| `views` | `int` |  |
+| `post_id` | `int` | The post identifier |
+| `views` | `int` | Number of views for the post |
 
 #### Example: Load
 

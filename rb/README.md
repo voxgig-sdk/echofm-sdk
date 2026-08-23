@@ -237,8 +237,8 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `post_id` |  |
-| `views` |  |
+| `post_id` | The post identifier |
+| `views` | Number of views for the post |
 
 Operations: Load.
 
@@ -263,8 +263,8 @@ Create an instance: `post = client.Post`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `post_id` | `Integer` |  |
-| `views` | `Integer` |  |
+| `post_id` | `Integer` | The post identifier |
+| `views` | `Integer` | Number of views for the post |
 
 #### Example: Load
 

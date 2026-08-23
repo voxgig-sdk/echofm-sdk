@@ -36,12 +36,14 @@
               "active": true,
               "name": "post_id",
               "req": false,
+              "short": "The post identifier",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "views",
               "req": false,
+              "short": "Number of views for the post",
               "type": "`$INTEGER`"
             }
           ],
