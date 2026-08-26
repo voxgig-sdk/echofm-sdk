@@ -28,6 +28,7 @@ module EchofmConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
