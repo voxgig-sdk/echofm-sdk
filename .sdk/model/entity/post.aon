@@ -39,10 +39,16 @@ main: kit: entity: post: {
           }
           method: "GET"
           orig: "/api/views/{post_id}"
-          parts: [
-            "api"
-            "views"
-            "{post_id}"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "views"
+            }
+            {
+              var: "post_id"
+            }
           ]
           select: {
             exist: [

@@ -90,10 +90,16 @@ class EchofmConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/views/{post_id}',
-                  'parts' => [
-                    'api',
-                    'views',
-                    '{post_id}',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'views',
+                    ],
+                    [
+                      'var' => 'post_id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -103,6 +109,11 @@ class EchofmConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'views',
+                    '{post_id}',
                   ],
                 ],
               ],
