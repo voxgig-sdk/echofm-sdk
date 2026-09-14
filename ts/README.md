@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { EchofmSDK } from '@voxgig-sdk/echofm'
+import { EchofmSDK } from '@voxgig-sdk/echofm-sdk'
 
 const client = new EchofmSDK()
 ```
@@ -406,7 +406,7 @@ echofm/
 Import the SDK from the package root:
 
 ```ts
-import { EchofmSDK } from '@voxgig-sdk/echofm'
+import { EchofmSDK } from '@voxgig-sdk/echofm-sdk'
 ```
 
 ### Entity state

@@ -105,7 +105,7 @@ local result, err = client:Post():load({ post_id = 1 })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/echofm` | publish pending — [install from git tag](https://github.com/voxgig-sdk/echofm-sdk/releases) |
+| TypeScript | `@voxgig-sdk/echofm-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/echofm-sdk/releases) |
 | Python | `voxgig-sdk-echofm` | publish pending — [install from git tag](https://github.com/voxgig-sdk/echofm-sdk/releases) |
 | PHP | `voxgig-sdk/echofm` | publish pending — [install from git tag](https://github.com/voxgig-sdk/echofm-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/echofm-sdk/go` | `go get github.com/voxgig-sdk/echofm-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Post():load({ post_id = 1 })
 ### TypeScript
 
 ```ts
-import { EchofmSDK } from '@voxgig-sdk/echofm'
+import { EchofmSDK } from '@voxgig-sdk/echofm-sdk'
 
 const client = new EchofmSDK()
 
