@@ -3,17 +3,17 @@
     "post": {
       "POST00": {
         "post_id": "POST01",
-        "views": "s15",
+        "views": 21,
         "id": "POST00"
       },
       "POST01": {
         "post_id": "POST01",
-        "views": "s29",
+        "views": 41,
         "id": "POST01"
       },
       "POST02": {
         "post_id": "POST01",
-        "views": "s3d",
+        "views": 61,
         "id": "POST02"
       }
     }
@@ -22,7 +22,85 @@
     "post": {
       "post_ref01": {
         "post_id": "POST01",
-        "views": "s51"
+        "views": 81
+      }
+    }
+  },
+  "requests": {
+    "GET /api/views/{post_id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getViews",
+        "parameters": [
+          {
+            "description": "The unique identifier of the post",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "schema": {
+              "example": 469191,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "post_id": {
+                      "description": "The post identifier",
+                      "example": 469191,
+                      "type": "integer"
+                    },
+                    "views": {
+                      "description": "Number of views for the post",
+                      "example": 1234,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successfully retrieved view count"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Post not found",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Post not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Internal server error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

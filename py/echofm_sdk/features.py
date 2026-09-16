@@ -1,12 +1,18 @@
 # Echofm SDK feature factory
 
 from echofm_sdk.feature.base_feature import EchofmBaseFeature
+from echofm_sdk.feature.ratelimit_feature import EchofmRatelimitFeature
+from echofm_sdk.feature.retry_feature import EchofmRetryFeature
 from echofm_sdk.feature.test_feature import EchofmTestFeature
+from echofm_sdk.feature.timeout_feature import EchofmTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: EchofmBaseFeature(),
+    "ratelimit": lambda: EchofmRatelimitFeature(),
+    "retry": lambda: EchofmRetryFeature(),
     "test": lambda: EchofmTestFeature(),
+    "timeout": lambda: EchofmTimeoutFeature(),
 }
 
 

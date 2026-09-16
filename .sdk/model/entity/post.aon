@@ -37,6 +37,12 @@ main: kit: entity: post: {
               }
             ]
           }
+          contract: {
+            id: "GET /api/views/{post_id}"
+            json: "{\"operationId\":\"getViews\",\"parameters\":[{\"description\":\"The unique identifier of the post\",\"in\":\"path\",\"name\":\"post_id\",\"required\":true,\"schema\":{\"example\":469191,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"post_id\":{\"description\":\"The post identifier\",\"example\":469191,\"type\":\"integer\"},\"views\":{\"description\":\"Number of views for the post\",\"example\":1234,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved view count\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Post not found\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Post not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Internal server error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/api/views/{post_id}"
           segments: [

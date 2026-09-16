@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Echofm SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class EchofmFeatures
@@ -14,8 +17,14 @@ class EchofmFeatures
         switch ($name) {
             case "base":
                 return new EchofmBaseFeature();
+            case "ratelimit":
+                return new EchofmRatelimitFeature();
+            case "retry":
+                return new EchofmRetryFeature();
             case "test":
                 return new EchofmTestFeature();
+            case "timeout":
+                return new EchofmTimeoutFeature();
             default:
                 return new EchofmBaseFeature();
         }
@@ -31,7 +40,10 @@ class EchofmFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
