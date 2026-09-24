@@ -70,7 +70,7 @@ function post_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["post01", "post02", "post03", "view01", "view02", "view03"] as $k) {
+    foreach (["post01", "post02", "post03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

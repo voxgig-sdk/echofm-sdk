@@ -1,7 +1,7 @@
 // Typed models for the Echofm SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,8 +14,6 @@ import (
 
 // Post is the typed data model for the post entity.
 type Post struct {
-	PostId *int `json:"post_id,omitempty"`
-	Views *int `json:"views,omitempty"`
 }
 
 // PostLoadMatch is the typed request payload for Post.LoadTyped.

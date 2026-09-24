@@ -32,8 +32,6 @@ client = EchofmSDK.new
 
 ### 3. Load a post
 
-Post is nested under post, so provide the `post_id`.
-
 ```ruby
 begin
   # load returns the ENTITY — call data_get for the Post record (raises on error).

@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,13 +107,15 @@ class Config {
             "fields": [
                 {
                     "name": "post_id",
-                    "short": "The post identifier",
-                    "type": "`$INTEGER`"
+                    "title": "Post Id",
+                    "type": "`$INTEGER`",
+                    "short": "The post identifier"
                 },
                 {
                     "name": "views",
-                    "short": "Number of views for the post",
-                    "type": "`$INTEGER`"
+                    "title": "Views",
+                    "type": "`$INTEGER`",
+                    "short": "Number of views for the post"
                 }
             ],
             "name": "post",
@@ -130,18 +125,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "params": [
-                                    {
-                                        "example": 469191,
-                                        "kind": "param",
-                                        "name": "post_id",
-                                        "orig": "post_id",
-                                        "reqd": true,
-                                        "type": "`$INTEGER`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/api/views/{post_id}",
@@ -156,30 +139,39 @@ class Config {
                                     "var": "post_id"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "post_id"
-                                ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "api",
                                 "views",
                                 "{post_id}"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {
+                                "params": [
+                                    {
+                                        "name": "post_id",
+                                        "orig": "post_id",
+                                        "type": "`$INTEGER`",
+                                        "kind": "param",
+                                        "reqd": true,
+                                        "example": 469191
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "post_id"
+                                ]
+                            }
                         }
                     ]
                 }
             },
             "relations": {
-                "ancestors": [
-                    [
-                        "view"
-                    ]
-                ]
+                "ancestors": []
             }
         }
     };

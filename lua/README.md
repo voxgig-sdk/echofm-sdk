@@ -35,8 +35,6 @@ local client = sdk.new()
 
 ### 3. Load a post
 
-Post is nested under post, so provide the `post_id`.
-
 ```lua
 local post, err = client:Post():load({ post_id = 1 })
 if err then error(err) end

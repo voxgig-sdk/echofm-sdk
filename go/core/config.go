@@ -91,13 +91,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "post_id",
-						"short": "The post identifier",
+						"title": "Post Id",
 						"type": "`$INTEGER`",
+						"short": "The post identifier",
 					},
 					map[string]any{
 						"name": "views",
-						"short": "Number of views for the post",
+						"title": "Views",
 						"type": "`$INTEGER`",
+						"short": "Number of views for the post",
 					},
 				},
 				"name": "post",
@@ -107,18 +109,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": 469191,
-											"kind": "param",
-											"name": "post_id",
-											"orig": "post_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/views/{post_id}",
@@ -133,30 +123,39 @@ func MakeConfig() map[string]any {
 										"var": "post_id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"post_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"api",
 									"views",
 									"{post_id}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "post_id",
+											"orig": "post_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": 469191,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"post_id",
+									},
 								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"view",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 		},

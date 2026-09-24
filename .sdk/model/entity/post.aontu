@@ -1,0 +1,76 @@
+# Entity: post
+
+main: kit: entity: post: {
+
+  alias: field: {}
+
+  fields: {
+    post_id: {
+      h: "Post Id"
+      n: "post_id"
+      r: false
+      sh: "The post identifier"
+      t: "`$INTEGER`"
+    }
+    views: {
+      h: "Views"
+      n: "views"
+      r: false
+      sh: "Number of views for the post"
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "post"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/views/{post_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 469191
+                k: "param"
+                n: "post_id"
+                or: "post_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/views/{post_id}"
+          q: {
+            exist: [
+              "post_id"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "views"
+            }
+            {
+              var: "post_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

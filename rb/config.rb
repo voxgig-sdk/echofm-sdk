@@ -99,13 +99,15 @@ module EchofmConfig
           "fields" => [
             {
               "name" => "post_id",
-              "short" => "The post identifier",
+              "title" => "Post Id",
               "type" => "`$INTEGER`",
+              "short" => "The post identifier",
             },
             {
               "name" => "views",
-              "short" => "Number of views for the post",
+              "title" => "Views",
               "type" => "`$INTEGER`",
+              "short" => "Number of views for the post",
             },
           ],
           "name" => "post",
@@ -115,18 +117,6 @@ module EchofmConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "example" => 469191,
-                        "kind" => "param",
-                        "name" => "post_id",
-                        "orig" => "post_id",
-                        "reqd" => true,
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/views/{post_id}",
@@ -141,30 +131,39 @@ module EchofmConfig
                       "var" => "post_id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "post_id",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "views",
                     "{post_id}",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "post_id",
+                        "orig" => "post_id",
+                        "type" => "`$INTEGER`",
+                        "kind" => "param",
+                        "reqd" => true,
+                        "example" => 469191,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "post_id",
+                    ],
+                  },
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "view",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
       },

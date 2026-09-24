@@ -35,14 +35,11 @@ const client = new EchofmSDK()
 
 ### 3. Load a post
 
-Post is nested under post, so provide the `post_id`.
 `load()` returns the entity directly and throws on failure:
 
 ```ts
 try {
-  const post = await client.Post().load({
-    post_id: 1,
-  })
+  const post = await client.Post().load({ post_id: 1 })
   console.log(post)
 } catch (err) {
   console.error('load failed:', err)

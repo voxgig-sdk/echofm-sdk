@@ -38,7 +38,6 @@ client = EchofmSDK()
 
 ### 3. Load a post
 
-Post is nested under post, so provide the `post_id`.
 `load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python

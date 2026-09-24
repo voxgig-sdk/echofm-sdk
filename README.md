@@ -14,7 +14,7 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `ratelimit`, `retry`, `test`, `timeout` — opt-in,
+> **Features:** `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
@@ -123,11 +123,8 @@ import { EchofmSDK } from '@voxgig-sdk/echofm-sdk'
 
 const client = new EchofmSDK()
 
-
-// Load a specific post (returns a Post)
-const post = await client.Post().load({
-  post_id: 1,
-})
+// Load post data (returns a Post)
+const post = await client.Post().load()
 console.log(post)
 ```
 
@@ -210,11 +207,8 @@ import sdk "github.com/voxgig-sdk/echofm-sdk/go"
 
 client := sdk.New()
 
-
-// Load a specific post
-post, err := client.Post(nil).Load(
-    map[string]any{"post_id": 1}, nil,
-)
+// Load post data
+post, err := client.Post(nil).Load(map[string]any{"post_id": 1}, nil)
 if err != nil {
     panic(err)
 }

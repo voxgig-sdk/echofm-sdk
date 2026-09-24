@@ -1,0 +1,32 @@
+# BasicPostFlow
+
+main: kit: flow: BasicPostFlow:
+{
+  entity: "post",
+  kind: "basic",
+  name: "BasicPostFlow",
+  step: [
+    {
+      i: {
+        ref: "post_ref01",
+        srcdatavar: "post_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "post01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-post_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostFlow"
+}

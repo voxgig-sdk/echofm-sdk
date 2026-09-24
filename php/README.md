@@ -33,8 +33,6 @@ $client = new EchofmSDK();
 
 ### 3. Load a post
 
-Post is nested under post, so provide the `post_id`.
-
 ```php
 try {
     // load() returns the ENTITY — call data_get() for the Post record (throws on error).
