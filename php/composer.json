@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/echofm",
+  "name": "voxgig-sdk/echofm-sdk",
   "description": "Unofficial generated PHP SDK for the Echofm public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "echofm"],
